@@ -22,7 +22,7 @@ ORG 100H         ;starts code at address 100H
   
  
 START:
-  ;Half mode clockwise 8steps each step is 45ú
+  ;Half mode clockwise 8steps each step is 45Ãº
    MOV AL, 00001000B  ;moves 08H to AL
   OUT PORTA,AL        ;outputs(copies) value of AL 08H  to I/O port PORTA which means the coil A(for example) is set to 1 
                       ;and the rest 3 coils set to 0
@@ -148,7 +148,7 @@ CALL DELAY ;DELAY
 ;--------------------
 CALL DELAY ;DELAY 
  DELAY PROC         ; DELAY PROCEDURE  
-  MOV CX, 0FFFFH     ;uses counter CX with delay time 0ffffH
+  MOV CX, 0FFFFH     ;uses counter CX with delay time 0ffffH Decreasing the value 0ffffH will increase the stepper motor speed
   MYLP: LOOP MYLP    ;loops tell CX is zero
   RET                ; retrun to the program
   DELAY ENDP
